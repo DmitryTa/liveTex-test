@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Marck+Script|Roboto+Slab&amp;subset=cyrillic" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+	<div id="app">
+		<header>
+			<div class="page-header">
+				<span class="page-header__logo">MyNotes</span>
+				<a id="create" href='#'><span class="icon-plus"></span>Create</a>
+				<input type="search" id="filter" сlass="page-header__search" placeholder="filter...">
+			</div>
+		</header>
+		<div class="container">
+			<div class="notes"></div>
+			
+		</div>
+		<div class="modal close">
+			<div class="modal__form">
+				<form>
+					<label for="form-title">Заголовок:</label>
+					<input type="text" name="title" id='form-title' autocomplete="off" required autofocus>
+					<label for="form-textatea">Текст:</label>
+					<textarea name="content" id="form-textatea"></textarea>
+					
+					<input type="submit" name="submitBtn" value="Create">
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="main.js"></script>
+<script>
+	const app = new Controller(document.getElementById('app'));
+	document.addEventListener('DOMContentLoaded', () => {
+		app.init()
+	})
+
+</script>
+</body>
+</html>
