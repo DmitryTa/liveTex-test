@@ -63,3 +63,25 @@ data = {
 }
 
 let list = new ListManipulator(data);
+
+
+
+
+
+const Maybe = x => Maybe.of(x);
+
+Maybe.of = x => !!x ? Just(x) : Nothing(x);
+
+const Just = x => ({
+  map: f => Just(f(x)),
+  fold: (f, _) => f(x)
+});
+
+const Nothing = _ => ({
+  map: f => Nothing(_),
+  fold: (_, g) => g(_)
+});
+
+const res = Maybe(8).map(x => x * 2).map(x => x * 100).fold(x => x, () => 'Nothing');
+
+console.log(res)
